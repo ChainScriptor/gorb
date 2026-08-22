@@ -1,0 +1,58 @@
+/* Supplemental styles for the React port. The bulk of the look comes from
+   the original xp.css; these only cover React-specific wiring and a couple
+   of custom app views. */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* custom Canal 88 controls (original used a richer control strip) */
+.wmp__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: #ece9d8;
+  border-top: 1px solid #b6c4dd;
+}
+.wmp__btn {
+  font: inherit;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid #7a95c2;
+  background: linear-gradient(#fff, #dfe8f6);
+  cursor: pointer;
+}
+.wmp__btn:hover { background: linear-gradient(#fff, #cfe0f5); }
+.wmp__ch { margin-left: auto; font-size: 12px; color: #35507d; }
+
+/* terminal cells */
+.term__cell {
+  background: #0b1b12;
+  color: #74ff9a;
+  border: 1px solid #1c3a24;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-family: 'Consolas', monospace;
+}
+.term__cell b { font-size: 16px; display: block; }
+.term__cell small { color: #6f9a7c; }
+
+/* keep app views filling the window body */
+.win__body > .static-app,
+.win__body > .wmp,
+.win__body > .folder,
+.win__body > .chart,
+.win__body > .term,
+.win__body > .msn,
+.win__body > .paint,
+.win__body > .viewer,
+.win__body > .shop {
+  height: 100%;
+}

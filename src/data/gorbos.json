@@ -1,0 +1,386 @@
+{
+ "REMOTE": "https://thetoadmeme.com",
+ "CONFIG": {
+  "ca": "A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump",
+  "x": "https://x.com/thetoadmeme_",
+  "community": "https://x.com/i/communities/1991148242780967304",
+  "tiktok": "https://www.tiktok.com/@gorbthememe",
+  "depot": "https://memedepot.com/d/the-grob-meme"
+ },
+ "MEMES": [
+  {
+   "f": "chains",
+   "cap": "breaking_the_chains"
+  },
+  {
+   "f": "sniper",
+   "cap": "sniper_season"
+  },
+  {
+   "f": "street",
+   "cap": "street_legend"
+  },
+  {
+   "f": "toadmart",
+   "cap": "toad_mart"
+  },
+  {
+   "f": "blade",
+   "cap": "holder_of_the_blade"
+  },
+  {
+   "f": "solangeles",
+   "cap": "solangeles"
+  },
+  {
+   "f": "deepliquidity",
+   "cap": "deep_liquidity"
+  },
+  {
+   "f": "greenwall",
+   "cap": "green_candle_incoming"
+  },
+  {
+   "f": "astronaut",
+   "cap": "already_past_the_moon"
+  },
+  {
+   "f": "greenpill",
+   "cap": "take_the_green_pill"
+  },
+  {
+   "f": "beach",
+   "cap": "generational_vacation"
+  },
+  {
+   "f": "mirror",
+   "cap": "we_see_the_vision"
+  },
+  {
+   "f": "cashfloor",
+   "cap": "1988_money"
+  },
+  {
+   "f": "jetski",
+   "cap": "full_send"
+  },
+  {
+   "f": "torch",
+   "cap": "passing_the_torch"
+  },
+  {
+   "f": "oldmoney",
+   "cap": "old_money_toad"
+  },
+  {
+   "f": "timekeeper",
+   "cap": "we_were_early"
+  },
+  {
+   "f": "tophat",
+   "cap": "respectfully_no"
+  },
+  {
+   "f": "cheers",
+   "cap": "cheers_to_38_years"
+  },
+  {
+   "f": "matrix",
+   "cap": "the_green_source"
+  },
+  {
+   "f": "diamond_hands",
+   "cap": "diamond_hands"
+  },
+  {
+   "f": "riding_the_bull",
+   "cap": "riding_the_bull"
+  },
+  {
+   "f": "command_centre",
+   "cap": "command_centre"
+  },
+  {
+   "f": "on_chain",
+   "cap": "on_chain"
+  },
+  {
+   "f": "whale_watching",
+   "cap": "whale_watching"
+  },
+  {
+   "f": "night_fishing",
+   "cap": "night_fishing"
+  },
+  {
+   "f": "harvest_season",
+   "cap": "harvest_season"
+  },
+  {
+   "f": "the_vault_opens",
+   "cap": "the_vault_opens"
+  },
+  {
+   "f": "king_of_the_pond",
+   "cap": "king_of_the_pond"
+  },
+  {
+   "f": "it_rains_green",
+   "cap": "it_rains_green"
+  },
+  {
+   "f": "flight_deck",
+   "cap": "flight_deck"
+  },
+  {
+   "f": "all_in",
+   "cap": "all_in"
+  },
+  {
+   "f": "climbing_the_chart",
+   "cap": "climbing_the_chart"
+  },
+  {
+   "f": "green_eyes",
+   "cap": "green_eyes"
+  },
+  {
+   "f": "riding_the_wave",
+   "cap": "riding_the_wave"
+  },
+  {
+   "f": "outplaying_the_bear",
+   "cap": "outplaying_the_bear"
+  },
+  {
+   "f": "cam_rugpull",
+   "cap": "rug_pull_caught_on_cam"
+  },
+  {
+   "f": "cam_alley",
+   "cap": "alley_cam_0355"
+  },
+  {
+   "f": "cam_atm",
+   "cap": "atm_vestibule"
+  },
+  {
+   "f": "cam_office",
+   "cap": "office_cam_0022"
+  },
+  {
+   "f": "cam_garage",
+   "cap": "parking_level_3"
+  },
+  {
+   "f": "laundromat",
+   "cap": "spin_cycle"
+  },
+  {
+   "f": "bmx",
+   "cap": "first_bike"
+  },
+  {
+   "f": "cooler",
+   "cap": "cold_one"
+  },
+  {
+   "f": "fishing",
+   "cap": "gone_fishing"
+  },
+  {
+   "f": "newsstand",
+   "cap": "morning_paper"
+  },
+  {
+   "f": "iceberg",
+   "cap": "bank_balance_vs_portfolio"
+  },
+  {
+   "f": "godzilla_mcd",
+   "cap": "kaiju_playplace"
+  },
+  {
+   "f": "happy_meal_toad",
+   "cap": "godzilla_x_toad"
+  },
+  {
+   "f": "handshake",
+   "cap": "the_deal"
+  },
+  {
+   "f": "money_wall",
+   "cap": "wall_of_cash"
+  }
+ ],
+ "CHANNELS": [
+  {
+   "ch": "88",
+   "name": "THE ORIGINAL",
+   "tag": "Archivo 1988",
+   "file": "intro",
+   "poster": "poster-intro.jpg",
+   "sec": 34.53
+  },
+  {
+   "ch": "89",
+   "name": "THE ARENA",
+   "tag": "Emblem",
+   "file": "arena4_emblem",
+   "poster": "poster-arena.jpg",
+   "sec": 8.08
+  },
+  {
+   "ch": "90",
+   "name": "LASER GRID",
+   "tag": "Heist II",
+   "file": "heist2_lasers",
+   "poster": "poster-lasers.jpg",
+   "sec": 8.08
+  },
+  {
+   "ch": "91",
+   "name": "THE VAULT",
+   "tag": "Heist III",
+   "file": "heist3_alarm",
+   "poster": "poster-vault.jpg",
+   "sec": 8.08
+  },
+  {
+   "ch": "92",
+   "name": "THE SOURCE",
+   "tag": "Green code",
+   "file": "TOAD_matrix_4_web",
+   "poster": "poster-source.jpg",
+   "sec": 15.09
+  },
+  {
+   "ch": "93",
+   "name": "GOLDEN LIGHT",
+   "tag": "Aftermath II",
+   "file": "aftermath2_goldenlight",
+   "poster": "poster-march.jpg",
+   "sec": 15.09
+  },
+  {
+   "ch": "94",
+   "name": "THE ENTRANCE",
+   "tag": "Drywall",
+   "file": "entrance_drywall",
+   "poster": "poster-entrance_drywall.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "95",
+   "name": "RED LIGHTS",
+   "tag": "Basement",
+   "file": "red_lights",
+   "poster": "poster-red_lights.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "96",
+   "name": "FULL THROTTLE",
+   "tag": "Roadside",
+   "file": "full_throttle",
+   "poster": "poster-full_throttle.jpg",
+   "sec": 15.04
+  },
+  {
+   "ch": "97",
+   "name": "THE ROOFTOP",
+   "tag": "Stunt tape",
+   "file": "rooftop_stunt",
+   "poster": "poster-rooftop_stunt.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "98",
+   "name": "THE TITLE",
+   "tag": "Ringside",
+   "file": "ring_title",
+   "poster": "poster-ring_title.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "99",
+   "name": "NIGHT SHIFT",
+   "tag": "Grinding",
+   "file": "night_shift",
+   "poster": "poster-night_shift.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "100",
+   "name": "COLD OPEN",
+   "tag": "Ice",
+   "file": "cold_open",
+   "poster": "poster-cold_open.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "101",
+   "name": "LAST CALL",
+   "tag": "Aftermath",
+   "file": "last_call",
+   "poster": "poster-last_call.jpg",
+   "sec": 15.04
+  },
+  {
+   "ch": "102",
+   "name": "THE MONTAGE",
+   "tag": "Steps at dawn",
+   "file": "rocky_toad",
+   "poster": "poster-rocky_toad.jpg",
+   "sec": 27.05
+  },
+  {
+   "ch": "103",
+   "name": "GOD CANDLE",
+   "tag": "Ascension",
+   "file": "god_candle",
+   "poster": "poster-god_candle.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "104",
+   "name": "THE LADDER",
+   "tag": "WrestleMania",
+   "file": "wwe_return",
+   "poster": "poster-wwe_return.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "105",
+   "name": "THE WALL",
+   "tag": "Street promo",
+   "file": "pumpfun_promo",
+   "poster": "poster-pumpfun_promo.jpg",
+   "sec": 121.56
+  },
+  {
+   "ch": "106",
+   "name": "THE BACK SEAT",
+   "tag": "Rideshare",
+   "file": "back_seat",
+   "poster": "poster-back_seat.jpg",
+   "sec": 15.04
+  },
+  {
+   "ch": "107",
+   "name": "NIGHT SHOP",
+   "tag": "CCTV 2005",
+   "file": "night_shop",
+   "poster": "poster-night_shop.jpg",
+   "sec": 15.07
+  },
+  {
+   "ch": "108",
+   "name": "THE BALLPARK",
+   "tag": "Mascot brawl",
+   "file": "ballpark",
+   "poster": "poster-ballpark.jpg",
+   "sec": 17.33
+  }
+ ]
+}
