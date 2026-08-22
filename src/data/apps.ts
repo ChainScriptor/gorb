@@ -84,6 +84,7 @@ export interface AppDef {
   h: number
   status: string
   dialog?: boolean
+  fullscreen?: boolean
 }
 
 // Titles/sizes/statuses mirror the original APP REGISTRY in main.js.
@@ -104,8 +105,8 @@ export const APPS: Record<AppId, AppDef> = {
   contract:   { title: 'Contract address',         icon: 'ic-contract',   w: 460, h: 300, status: '', dialog: true },
   safety:     { title: 'ReadMe.txt — Notepad',     icon: 'ic-safety',     w: 540, h: 480, status: '' },
   bin:        { title: 'Recycle Bin',              icon: 'ic-bin',        w: 480, h: 320, status: '3 objects' },
-  nftmint:    { title: 'Gorb NFT Mint',             icon: 'ic-nftmint',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
-  game:       { title: 'Gorb Rescue',               icon: 'ic-game',       w: 720, h: 520, status: 'In development' },
+  nftmint:    { title: 'Gorb NFT Mint',             icon: '/nft.svg',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
+  game:       { title: 'Gorb Rescue',               icon: '/game.png',       w: 720, h: 520, status: 'In development', fullscreen: true },
 }
 
 export interface DeskItem { app?: AppId; link?: keyof typeof CONFIG; label: string; icon?: string }
@@ -136,8 +137,8 @@ export interface MenuItem { icon: string; label: string; sub?: string; app?: App
 export const LOGO = '/4444.png'
 
 export const START_LEFT: MenuItem[] = [
-  { icon: 'ic-nftmint',    label: 'Gorb NFT Mint', sub: 'Mint on Solana devnet', app: 'nftmint' },
-  { icon: 'ic-game',       label: 'Gorb Rescue', sub: 'The game — in development', app: 'game' },
+  { icon: '/nft.svg',    label: 'Gorb NFT Mint', sub: 'Mint on Solana devnet', app: 'nftmint' },
+  { icon: '/game.png',       label: 'Gorb Rescue', sub: 'The game — in development', app: 'game' },
   { icon: 'ic-explorer',   label: 'Gorb Archivo', sub: 'The whole story', app: 'explorer' },
   { icon: 'ic-canal88',    label: 'Canal 88 Player', sub: `${CHANNELS.length} tapes`, app: 'canal88' },
   { icon: 'ic-paint',      label: 'Gorb Paint', sub: 'Draw something', app: 'paint' },

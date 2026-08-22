@@ -1,10 +1,11 @@
 import { createUmi } from '@metaplex-foundation/umi-bundle-defaults'
 import { createSignerFromKeypair, signerIdentity, generateSigner, publicKey, sol, some } from '@metaplex-foundation/umi'
 import { createCollection } from '@metaplex-foundation/mpl-core'
-import { mplCandyMachine, create, addConfigLines } from '@metaplex-foundation/mpl-core-candy-machine'
+import { mplCandyMachine, create } from '@metaplex-foundation/mpl-core-candy-machine'
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { join } from 'node:path'
+import { createHash } from 'node:crypto'
 import { PRODUCTS } from '../../src/data/apps'
 import {
   RPC_URL,
@@ -37,7 +38,6 @@ const eddsaKeypair = umi.eddsa.createKeypairFromSecretKey(secret)
 const authority = createSignerFromKeypair(umi, eddsaKeypair)
 umi.use(signerIdentity(authority))
 
-const CHUNK_SIZE = 8
 const manifestFile = fileURLToPath(MANIFEST_PATH)
 
 // Public devnet RPC regularly misses blockhash confirmation windows under load.
@@ -108,19 +108,20 @@ async function main() {
     console.log(`\nCreating candy machine for "${p.title}"...`)
     const candyMachineSigner = generateSigner(umi)
 
+    // Every edition of a design is byte-identical, so "hidden settings" (one
+    // shared name+uri for the whole candy machine) is the right fit here —
+    // it skips per-edition config-line storage entirely, which is what was
+    // driving nearly all of the on-chain rent cost (~0.17 SOL -> ~0.005 SOL
+    // per candy machine, confirmed on devnet before wiring this in).
+    const hash = createHash('sha256').update(asset.metadataUri).digest().subarray(0, 32)
+
     const createBuilder = await create(umi, {
       candyMachine: candyMachineSigner,
       collection: publicKey(collectionAddress),
       collectionUpdateAuthority: authority,
       itemsAvailable: EDITIONS_PER_DESIGN,
       isMutable: true,
-      configLineSettings: some({
-        prefixName: '',
-        nameLength: 32,
-        prefixUri: '',
-        uriLength: 200,
-        isSequential: true,
-      }),
+      hiddenSettings: some({ name: p.title, uri: asset.metadataUri, hash }),
       guards: {
         solPayment: some({ lamports: sol(PRICE_SOL), destination: authority.publicKey }),
       },
@@ -129,22 +130,6 @@ async function main() {
     await new Promise((r) => setTimeout(r, 600))
 
     console.log(`  Candy machine: ${candyMachineSigner.publicKey}`)
-    console.log(`  Adding ${EDITIONS_PER_DESIGN} identical config lines (${p.title})...`)
-
-    const lines = Array.from({ length: EDITIONS_PER_DESIGN }, () => ({ name: p.title, uri: asset.metadataUri }))
-    for (let i = 0; i < lines.length; i += CHUNK_SIZE) {
-      const chunk = lines.slice(i, i + CHUNK_SIZE)
-      await withRetry(`config lines ${i}-${i + chunk.length - 1} for "${p.title}"`, () =>
-        addConfigLines(umi, {
-          candyMachine: candyMachineSigner.publicKey,
-          index: i,
-          configLines: chunk,
-        }).sendAndConfirm(umi),
-      )
-      process.stdout.write(`    lines ${i}-${i + chunk.length - 1} added\r`)
-      await new Promise((r) => setTimeout(r, 600)) // stay under the public RPC's rate limit
-    }
-    console.log(`    all ${EDITIONS_PER_DESIGN} lines added.`)
 
     manifest.products[p.id] = {
       candyMachine: candyMachineSigner.publicKey,

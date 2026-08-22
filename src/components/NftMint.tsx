@@ -26,6 +26,7 @@ export default function NftMint() {
   }, [wallet])
 
   const deployed = manifest.collection && manifest.treasury
+  const payoutWallet = (manifest as { paymentDestination?: string }).paymentDestination || manifest.treasury
 
   const mint = async (productId: string) => {
     const entry = (manifest.products as Record<string, { candyMachine: string; priceSol: number }>)[productId]
@@ -42,7 +43,7 @@ export default function NftMint() {
             asset,
             collection: publicKey(manifest.collection),
             mintArgs: {
-              solPayment: some({ destination: publicKey(manifest.treasury) }),
+              solPayment: some({ destination: publicKey(payoutWallet) }),
             },
           }),
         )

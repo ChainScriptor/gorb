@@ -29,6 +29,21 @@ export default function Window({ win }: { win: WinInstance }) {
     ;(e.currentTarget as HTMLElement).releasePointerCapture?.(e.pointerId)
   }
 
+  if (def.fullscreen) {
+    return (
+      <section
+        className="win win--fullscreen"
+        data-app={win.app}
+        role="dialog"
+        aria-label={def.title}
+        style={{ position: 'fixed', inset: 0, zIndex: win.z, display: win.min ? 'none' : undefined }}
+        onPointerDown={() => wm.focus(win.key)}
+      >
+        <AppContent app={win.app} payload={win.payload} winKey={win.key} />
+      </section>
+    )
+  }
+
   const style: React.CSSProperties = max
     ? { left: 0, top: 0, width: '100%', height: 'calc(100% - 0px)', zIndex: win.z }
     : { left: win.x, top: win.y, width: win.w, height: win.h, zIndex: win.z }
