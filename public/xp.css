@@ -130,19 +130,19 @@ a{ color:var(--link); }
   display:none; grid-template-rows:auto 1fr auto;
   background:
     radial-gradient(60% 60% at 18% 22%, rgba(255,255,255,.22), transparent 60%),
-    linear-gradient(180deg,#5a9ae0 0%, #3f7fd0 45%, #2f6dc0 100%);
+    linear-gradient(180deg,#c66bff 0%, #A52AF4 45%, #7d17c4 100%);
   color:#fff;
 }
 .login.is-on{ display:grid; }
 .login.is-gone{ display:none; }
-.login__bar{ background:linear-gradient(180deg,#1a4b9c,#123a80); }
-.login__bar--top{ height:9%; min-height:52px; border-bottom:2px solid #7fb2ff; }
+.login__bar{ background:linear-gradient(180deg,#7d17c4,#5c0f92); }
+.login__bar--top{ height:9%; min-height:52px; border-bottom:2px solid #d9a6ff; }
 .login__bar--bottom{
-  min-height:74px; border-top:2px solid #7fb2ff;
+  min-height:74px; border-top:2px solid #d9a6ff;
   display:flex; align-items:center; justify-content:space-between; gap:20px;
   padding:12px clamp(16px,4vw,48px); flex-wrap:wrap;
 }
-.login__bar--bottom p{ margin:0; font-size:11px; color:#bfd6ff; max-width:46ch; text-align:right; }
+.login__bar--bottom p{ margin:0; font-size:11px; color:#e5cbff; max-width:46ch; text-align:right; }
 .login__toggle{
   display:flex; align-items:center; gap:9px; cursor:pointer;
   font-size:13px; color:#fff;
