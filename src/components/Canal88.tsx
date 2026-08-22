@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { CHANNELS, GORB_IMAGES } from '../data/apps'
+import { CHANNELS } from '../data/apps'
 
-// Original airs one shared tape worked out from the clock. There is no local
-// video, so each channel shows a Gorb still from /public instead.
+// Original airs one shared tape worked out from the clock.
 function currentIndex() {
   const total = CHANNELS.reduce((n, c) => n + c.sec, 0)
   const t = (Date.now() / 1000) % total
@@ -17,15 +16,17 @@ function currentIndex() {
 export default function Canal88() {
   const [i, setI] = useState(currentIndex)
   const ch = CHANNELS[i]
-  const still = GORB_IMAGES[i % GORB_IMAGES.length]
   const go = (d: number) => setI((n) => (n + d + CHANNELS.length) % CHANNELS.length)
 
   return (
     <div className="wmp">
       <div className="wmp__screen">
-        <img
-          src={still}
-          alt={ch.name}
+        <video
+          src="/1.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           style={{ width: '100%', height: '100%', objectFit: 'cover', background: '#000' }}
         />
         <div className="wmp__osd">

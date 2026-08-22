@@ -1,0 +1,74 @@
+{
+  "gorb": {
+    "imageUri": "https://gateway.irys.xyz/DKg7XVoKEHHhTfLnhQXMvfWDZGfJb4ypiKvgb46YqgRG",
+    "metadataUri": "https://gateway.irys.xyz/Ee96qsmvjJbgSLL13YAWmhtB3z3TZ6bMHFdmiWDTQBxt"
+  },
+  "gorb_dad": {
+    "imageUri": "https://gateway.irys.xyz/FyfS4XyrNVSyQucSVi8xRZKR5xn24gvLL98XCvrz9EoJ",
+    "metadataUri": "https://gateway.irys.xyz/4sbufyPGAjNW1Wr3d529nnnbfzAoEByMGXhNrsc3tytS"
+  },
+  "gorb_mom": {
+    "imageUri": "https://gateway.irys.xyz/G2jgsn8HSgvfrYPGL1djMUTPpDVyf21wHidME5221Be5",
+    "metadataUri": "https://gateway.irys.xyz/CFFj7UtonP9vee3VScqB8Vg737Jf5nLzwHHWs83r19aW"
+  },
+  "gorb_dog": {
+    "imageUri": "https://gateway.irys.xyz/987zfVEjgnmrkJatNT3aPm6fJ1XmhFmazEZstL1Rw3Fi",
+    "metadataUri": "https://gateway.irys.xyz/3zH68GqqT2vaTkNu44NWGTrqWJiLGjgSgjhoa5Z7bKAc"
+  },
+  "gorb_uncle": {
+    "imageUri": "https://gateway.irys.xyz/G9xpotGD8PaSgP7tREM8kEqAnwvwEkWTAZCUQK58jhwU",
+    "metadataUri": "https://gateway.irys.xyz/2MaCqfbTLgEE5PZQDXgeJs1taB8mj1TVhmdz9fupC8Ba"
+  },
+  "gorb_grandpa": {
+    "imageUri": "https://gateway.irys.xyz/4W4stp2c6fWLJ6odENoTm3VJR9iFVt3pETmw8SBhBysQ",
+    "metadataUri": "https://gateway.irys.xyz/GwunskxDcYQnYJSGyRjWkc4m63VbL2nvS3bK78wDifxY"
+  },
+  "gorb_grandma": {
+    "imageUri": "https://gateway.irys.xyz/8quYjKWBZLJPx4LNagREdMqYk5bRRyxpymJJia5Vxj4Z",
+    "metadataUri": "https://gateway.irys.xyz/2TqJYPrGbv4Waqxw29bEGMsN44xYhiGhLSS4RTDPyoj8"
+  },
+  "gorb_baby": {
+    "imageUri": "https://gateway.irys.xyz/72mCXvUqxFCceYimwRm7fxs3G3mjkCr4MxaKNCnEUsEA",
+    "metadataUri": "https://gateway.irys.xyz/Bkmn74CuXH795sakdPRkrBFodCinTUJ9XohytoWUCdb4"
+  },
+  "gorb_auntie": {
+    "imageUri": "https://gateway.irys.xyz/43jKMVVyniCDusNqh4jVsbu6c5zuGCtNppt1ALthhUPJ",
+    "metadataUri": "https://gateway.irys.xyz/8bJuusVhSWmwLATcvJrqRUMFjzsKwwp9CU4cxU8LXx6p"
+  },
+  "gorb_alien": {
+    "imageUri": "https://gateway.irys.xyz/BKCoZaMAXooGcUNr75L6crryr8fFrmVB7UGctfJrdKr9",
+    "metadataUri": "https://gateway.irys.xyz/EhWqiTKX6cDtczdpGG9gs8rco4AzUQwVBYsHtweg9hUD"
+  },
+  "gorb_slime": {
+    "imageUri": "https://gateway.irys.xyz/gKPNhDvZoKv19d23RBr45KvtKDWBjA8wrAgSFR2TvZY",
+    "metadataUri": "https://gateway.irys.xyz/CdZhYPW9fYQA6Z3eavCiBqqKtyeJoJTNJuPBaNwCTViw"
+  },
+  "gorb_shadow": {
+    "imageUri": "https://gateway.irys.xyz/bmakZ1D23YP6yFpL9K7EGKoLsLJYLyTodcPmrzfb2VG",
+    "metadataUri": "https://gateway.irys.xyz/HCkseXKnnLtyYHRcAxgd34Ycfdt1u5HuYUM84nDq1kSj"
+  },
+  "gorb_banana": {
+    "imageUri": "https://gateway.irys.xyz/AR1V4PSTRz3zm6gJmqGCb39s8EWsYJiqTYDYr8gmYYP5",
+    "metadataUri": "https://gateway.irys.xyz/Bmg1b53Z9hrVmtvr6y6wRo8NWqA6bDqy5K5XNhMXEqCs"
+  },
+  "gorb_popcorn": {
+    "imageUri": "https://gateway.irys.xyz/6gS25Fx9w6BuNvdAtVUkNHPjC5VwjRKdam2qb6UJkoco",
+    "metadataUri": "https://gateway.irys.xyz/2ag6e2ogzVbL6hHpZ46ERxtjS5b2BqnwnmhB8pqvnNoF"
+  },
+  "gorb_pizza": {
+    "imageUri": "https://gateway.irys.xyz/8DCjL3CG6SjYKBGae6VezsEs8t47gpfP9stc7u9hbd2Q",
+    "metadataUri": "https://gateway.irys.xyz/Du9f65aF6gE1SabWkhk4HxoUcbWgRBQJvCAL4DvKxWXZ"
+  },
+  "gorb_rockstar": {
+    "imageUri": "https://gateway.irys.xyz/5JcDLdhCZq89aiQoR6gKpPY577dazYj2FCN7aTsBjnoL",
+    "metadataUri": "https://gateway.irys.xyz/7eDXdgGN3pehTjGWSB7sJrAhqLUGraabkGXCM6qA2cDw"
+  },
+  "gorb_ninja": {
+    "imageUri": "https://gateway.irys.xyz/DMnQwLAmuZm6UFxyBLUnzpwB2CzFAzpyVfYCtxhDiMb6",
+    "metadataUri": "https://gateway.irys.xyz/D1Qfu9ZJf6o1bKgTYd1KRyKcpZhfHWHVzbwvovRPBpjz"
+  },
+  "gorb_superhero": {
+    "imageUri": "https://gateway.irys.xyz/3vwscdgYGTnWv7asrki7durKcg8yLyHTSS6AWQc72R9Q",
+    "metadataUri": "https://gateway.irys.xyz/8BBP3S9YbGPHRzuaHMTAA6Ejtk4wuKZe8kXoygYEay3G"
+  }
+}

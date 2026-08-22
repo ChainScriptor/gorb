@@ -163,3 +163,36 @@ create policy gorb_orders_insert on public.gorb_orders
   );
 
 grant insert on public.gorb_orders to anon;
+
+-- ─────────────────────────────────────────────────────────────
+-- NFT MINTS  (Gorb NFT Mint, Solana devnet)
+-- The actual mint happens on-chain via a Candy Machine guard; this table is
+-- just our own record of it. Readable so a wallet can see its past mints.
+-- ─────────────────────────────────────────────────────────────
+create table if not exists public.gorb_nft_mints (
+  id           bigint generated always as identity primary key,
+  created_at   timestamptz not null default now(),
+  who          text,                        -- anonymous client id
+  wallet       text not null,               -- buyer's Solana wallet address
+  product_id   text not null,               -- PRODUCTS[].id
+  mint_address text not null,               -- the minted Core asset address
+  tx_sig       text not null                -- devnet transaction signature
+);
+
+alter table public.gorb_nft_mints enable row level security;
+
+drop policy if exists gorb_nft_mints_read   on public.gorb_nft_mints;
+drop policy if exists gorb_nft_mints_insert on public.gorb_nft_mints;
+
+create policy gorb_nft_mints_read on public.gorb_nft_mints
+  for select using (true);
+
+create policy gorb_nft_mints_insert on public.gorb_nft_mints
+  for insert with check (
+        char_length(wallet)       between 32 and 64
+    and char_length(product_id)   between 1  and 40
+    and char_length(mint_address) between 32 and 64
+    and char_length(tx_sig)       between 32 and 128
+  );
+
+grant select, insert on public.gorb_nft_mints to anon;

@@ -980,7 +980,8 @@ input, textarea{ cursor:text; }
    its head and its punchline. */
 .wall--centre{
   object-fit:contain;
-  background:#1d2b1a;
+  object-position:center center;
+  background:#0a0a0a;
 }
 
 /* Canal 88 runs to a schedule, so the player needs to say which of the two

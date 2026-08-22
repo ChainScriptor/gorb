@@ -8,12 +8,13 @@ import Gallery from './Gallery'
 import Chat from './Chat'
 import Terminal from './Terminal'
 import Paint from './Paint'
-import Shop from './Shop'
+import NftMint from './NftMint'
+import GameComingSoon from './GameComingSoon'
 
 // Apps whose content is fully contained in the original <template> markup.
 const STATIC: AppId[] = ['explorer', 'tokenomics', 'buy', 'lore', 'safety', 'bin', 'board', 'contract']
 
-export default function AppContent({ app, payload }: { app: AppId; payload?: unknown; winKey?: number }) {
+export default function AppContent({ app, payload, winKey }: { app: AppId; payload?: unknown; winKey?: number }) {
   switch (app) {
     case 'canal88': return <Canal88 />
     case 'chart': return <Chart />
@@ -23,7 +24,8 @@ export default function AppContent({ app, payload }: { app: AppId; payload?: unk
     case 'chat': return <Chat />
     case 'terminal': return <Terminal />
     case 'paint': return <Paint />
-    case 'shop': return <Shop />
+    case 'nftmint': return <NftMint />
+    case 'game': return <GameComingSoon winKey={winKey} />
     default:
       if (STATIC.includes(app)) return <StaticApp app={app} />
       return <StaticApp app={app} />

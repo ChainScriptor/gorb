@@ -17,6 +17,26 @@ export const MEMES: Meme[] = [
   { img: '/content.webp', cap: 'generational_wealth' },
 ]
 
+// Sub-folders inside the Evidence viewer. Filenames are numeric per folder,
+// mixing .webp/.png as whatever was dropped into /public/<folder>.
+export interface MemeFolder { id: string; label: string; items: Meme[] }
+
+const MIAMI_FILES = ['1.webp', '2.webp', '3.webp', '4.webp', '5.webp', '6.webp', '7.webp', '8.webp', '9.webp', '10.png']
+const UNCLE_FILES = ['1.png', '2.png', '3.png', '4.png', '5.png']
+
+export const MEME_FOLDERS: MemeFolder[] = [
+  {
+    id: 'miami',
+    label: 'Miami',
+    items: MIAMI_FILES.map((f, i) => ({ img: `/miami/${f}`, cap: `miami_${i + 1}` })),
+  },
+  {
+    id: 'uncle',
+    label: 'Uncle',
+    items: UNCLE_FILES.map((f, i) => ({ img: `/uncle/${f}`, cap: `uncle_${i + 1}` })),
+  },
+]
+
 export const CHANNELS = raw.CHANNELS as Channel[]
 
 // Local Gorb images, reused as Canal 88 channel stills (no local video).
@@ -55,7 +75,7 @@ export const CONFIG = {
 export type AppId =
   | 'explorer' | 'canal88' | 'paint' | 'terminal' | 'chat' | 'gallery' | 'memes'
   | 'viewer' | 'tokenomics' | 'buy' | 'lore' | 'board' | 'chart' | 'contract'
-  | 'safety' | 'bin' | 'shop'
+  | 'safety' | 'bin' | 'nftmint' | 'game'
 
 export interface AppDef {
   title: string
@@ -84,13 +104,15 @@ export const APPS: Record<AppId, AppDef> = {
   contract:   { title: 'Contract address',         icon: 'ic-contract',   w: 460, h: 300, status: '', dialog: true },
   safety:     { title: 'ReadMe.txt — Notepad',     icon: 'ic-safety',     w: 540, h: 480, status: '' },
   bin:        { title: 'Recycle Bin',              icon: 'ic-bin',        w: 480, h: 320, status: '3 objects' },
-  shop:       { title: 'Gorb Shop',                icon: 'ic-shop',       w: 860, h: 620, status: `${PRODUCTS.length} products` },
+  nftmint:    { title: 'Gorb NFT Mint',             icon: 'ic-nftmint',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
+  game:       { title: 'Gorb Rescue',               icon: 'ic-game',       w: 720, h: 520, status: 'In development' },
 }
 
 export interface DeskItem { app?: AppId; link?: keyof typeof CONFIG; label: string; icon?: string }
 
 export const DESKTOP_ICONS: DeskItem[] = [
-  { app: 'shop',       label: 'Gorb Shop' },
+  { app: 'nftmint',    label: 'Gorb NFT Mint' },
+  { app: 'game',       label: 'Gorb Rescue' },
   { app: 'explorer',   label: 'Gorb Archivo' },
   { app: 'canal88',    label: 'Canal 88' },
   { link: 'tiktok',    label: 'TikTok',        icon: 'ic-tiktok' },
@@ -114,7 +136,8 @@ export interface MenuItem { icon: string; label: string; sub?: string; app?: App
 export const LOGO = '/4444.png'
 
 export const START_LEFT: MenuItem[] = [
-  { icon: 'ic-shop',       label: 'Gorb Shop', sub: 'Buy the plushies', app: 'shop' },
+  { icon: 'ic-nftmint',    label: 'Gorb NFT Mint', sub: 'Mint on Solana devnet', app: 'nftmint' },
+  { icon: 'ic-game',       label: 'Gorb Rescue', sub: 'The game — in development', app: 'game' },
   { icon: 'ic-explorer',   label: 'Gorb Archivo', sub: 'The whole story', app: 'explorer' },
   { icon: 'ic-canal88',    label: 'Canal 88 Player', sub: `${CHANNELS.length} tapes`, app: 'canal88' },
   { icon: 'ic-paint',      label: 'Gorb Paint', sub: 'Draw something', app: 'paint' },

@@ -17,7 +17,7 @@ const POS_KEY = 'gorb:iconpos'
 
 // These shortcuts sit in a centered row along the top of the desktop by
 // default (matched by app id or, for link icons, by their CONFIG key).
-const FEATURED = ['shop', 'tiktok', 'chat', 'canal88', 'memes']
+const FEATURED = ['nftmint', 'tiktok', 'chat', 'canal88', 'memes']
 const keyOf = (item: (typeof DESKTOP_ICONS)[number]) => item.app ?? item.link ?? ''
 
 // Default layout: featured icons in a top-centered row, the rest in the
@@ -113,7 +113,7 @@ export default function Desktop({ scanlines, onToggleScan }: Props) {
         if (!t.closest('#startMenu') && !t.closest('#startBtn')) setStartOpen(false)
       }}
     >
-      <img className="wall" src={'/windows.webp'} alt="" />
+      <img className="wall wall--centre" src={'/windows.webp'} alt="" />
 
       <div className="icons" id="icons" ref={iconsRef}>
         {DESKTOP_ICONS.map((item, i) => {

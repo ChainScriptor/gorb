@@ -5,6 +5,7 @@ import { useIsMobile } from './hooks/useIsMobile'
 import Login from './components/Login'
 import Desktop from './components/Desktop'
 import MobileShell from './components/MobileShell'
+import WalletContextProvider from './wallet/WalletContextProvider'
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -29,13 +30,15 @@ export default function App() {
           onEnter={() => setLoggedIn(true)}
         />
       ) : (
-        <WMProvider>
-          {isMobile ? (
-            <MobileShell scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
-          ) : (
-            <Desktop scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
-          )}
-        </WMProvider>
+        <WalletContextProvider>
+          <WMProvider>
+            {isMobile ? (
+              <MobileShell scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
+            ) : (
+              <Desktop scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
+            )}
+          </WMProvider>
+        </WalletContextProvider>
       )}
     </>
   )

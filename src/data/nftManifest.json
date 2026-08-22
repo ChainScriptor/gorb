@@ -1,0 +1,78 @@
+{
+  "collection": "31MrGkn8u3cFbYgBymXAhMtpYXVmbNk96rVRJmKWAz6S",
+  "treasury": "rWZQohK1CbkfKcTAYeuMG6D1sMr65MvotycyZW2Z1WP",
+  "products": {
+    "gorb": {
+      "candyMachine": "2hYYStAkHhQ7G4wx3FcNjtkKXBQgz8mjUkghcwQi8zRS",
+      "priceSol": 0.05
+    },
+    "gorb_dad": {
+      "candyMachine": "J7xtS7s8z8zYsxekmBcd8oNjcjcxw2y4eYMnWBqjGzyW",
+      "priceSol": 0.05
+    },
+    "gorb_mom": {
+      "candyMachine": "6miFLseXy6jV6nXBnodutSVeABgDf89uVSr69qDnz92W",
+      "priceSol": 0.05
+    },
+    "gorb_dog": {
+      "candyMachine": "3uWzmFe44JudY6K7ZoCDZP2DgY62BXLnqkSeGThEgEbL",
+      "priceSol": 0.05
+    },
+    "gorb_uncle": {
+      "candyMachine": "AYQrj57X4j7ui7awp2KAxSZEWALncbqNwUuZNgy8Bo6c",
+      "priceSol": 0.05
+    },
+    "gorb_grandpa": {
+      "candyMachine": "GWYcFszAxkChudTd6tq7CSQgx2DkEfGRSdZcDeYvPm6V",
+      "priceSol": 0.05
+    },
+    "gorb_grandma": {
+      "candyMachine": "4MxZjGLQTYQ8iupRu4WaUGVgaA1HdLHf5W2SYGC3pjdA",
+      "priceSol": 0.05
+    },
+    "gorb_baby": {
+      "candyMachine": "CLoA8D3Bn5zrxzXR2zngYj4KKVULfmrqNUM8UwmmmMdj",
+      "priceSol": 0.05
+    },
+    "gorb_auntie": {
+      "candyMachine": "GyY9cFiz1zXDqbnaswuLbWNSGdEhi6t1AeUrVadBqxPL",
+      "priceSol": 0.05
+    },
+    "gorb_alien": {
+      "candyMachine": "6CFxNPAPhUScFDNCTXF5BcB1WjxRyZGZqgQeeXrQofXX",
+      "priceSol": 0.05
+    },
+    "gorb_slime": {
+      "candyMachine": "DyDRA34phccQDTEC7uURcsTJLdMoM1rekjrumEavVz4w",
+      "priceSol": 0.05
+    },
+    "gorb_shadow": {
+      "candyMachine": "2rUJHRNeBQTggTyJjzcRnNhKHAnD7LKJ6qTAuSaeGEWq",
+      "priceSol": 0.05
+    },
+    "gorb_banana": {
+      "candyMachine": "U9Bwu2BCWisESLAcyskE59wwg2hBiu14mEBUeC3oR4b",
+      "priceSol": 0.05
+    },
+    "gorb_popcorn": {
+      "candyMachine": "HX2Q8f7r9Phe5ZL4MEKY6AwEzS25381DEeGvAtRoiAzV",
+      "priceSol": 0.05
+    },
+    "gorb_pizza": {
+      "candyMachine": "EaZbemw1iRP2gicUX1DuVBC4UpKU37aWfPsyw29QvfXK",
+      "priceSol": 0.05
+    },
+    "gorb_rockstar": {
+      "candyMachine": "EMFi3jJqMwDb613M3tEvzYPLP7qdAcrAW9shLUTi1qqf",
+      "priceSol": 0.05
+    },
+    "gorb_ninja": {
+      "candyMachine": "BKwtzXqqeqSLY2hRStX1VFU7MBgVcJAdfZS1izdLjCGZ",
+      "priceSol": 0.05
+    },
+    "gorb_superhero": {
+      "candyMachine": "4GXb8YLKeZLdkoyQ2mcQMzCz9DmFVuRBUXzvDXMtQvf4",
+      "priceSol": 0.05
+    }
+  }
+}
