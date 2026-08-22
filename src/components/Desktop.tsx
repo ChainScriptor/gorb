@@ -113,7 +113,7 @@ export default function Desktop({ scanlines, onToggleScan }: Props) {
         if (!t.closest('#startMenu') && !t.closest('#startBtn')) setStartOpen(false)
       }}
     >
-      <img className="wall" src={'/windows.png'} alt="" />
+      <img className="wall" src={'/windows.webp'} alt="" />
 
       <div className="icons" id="icons" ref={iconsRef}>
         {DESKTOP_ICONS.map((item, i) => {

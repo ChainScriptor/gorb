@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { SPRITE } from './data/sprite'
 import { WMProvider } from './wm'
+import { useIsMobile } from './hooks/useIsMobile'
 import Login from './components/Login'
 import Desktop from './components/Desktop'
+import MobileShell from './components/MobileShell'
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false)
   const [scanlines, setScanlines] = useState(false)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     // the original clears the boot class once the shell is up
@@ -27,7 +30,11 @@ export default function App() {
         />
       ) : (
         <WMProvider>
-          <Desktop scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
+          {isMobile ? (
+            <MobileShell scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
+          ) : (
+            <Desktop scanlines={scanlines} onToggleScan={() => setScanlines((s) => !s)} />
+          )}
         </WMProvider>
       )}
     </>

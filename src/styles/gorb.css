@@ -56,3 +56,113 @@ html, body, #root {
 .win__body > .shop {
   height: 100%;
 }
+
+/* ── Android-style phone shell ─────────────────────────────── */
+.mob {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #3a0d5c;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+}
+.mob__status {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(env(safe-area-inset-top) + 5px) 16px 5px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, .35);
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+.mob__sys { letter-spacing: 1px; }
+
+.mob__home {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  background: url(/windows.webp) center / cover no-repeat;
+}
+.mob__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 4px;
+  padding: 22px 10px 30px;
+}
+.mob__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 0;
+}
+.mob__iconimg {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, .92);
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+}
+.mob__iconimg svg, .mob__iconimg img { width: 40px; height: 40px; }
+.mob__label {
+  font-size: 11px;
+  line-height: 1.2;
+  max-width: 78px;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .85);
+}
+
+.mob__app {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #111;
+}
+.mob__appbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: linear-gradient(#7d17c4, #5c0f92);
+  color: #fff;
+  font-family: 'Varela Round', system-ui, sans-serif;
+}
+.mob__appico { width: 22px; height: 22px; }
+.mob__appbody { flex: 1; min-height: 0; overflow: auto; }
+.mob__appbody > * { height: 100%; }
+
+.mob__nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 46px;
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #0a0a0a;
+  color: #fff;
+  z-index: 2;
+}
+.mob__nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  width: 72px;
+  height: 100%;
+  cursor: pointer;
+}
+.mob__nav button:active { background: rgba(255, 255, 255, .12); }

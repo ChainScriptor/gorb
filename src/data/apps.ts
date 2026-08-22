@@ -8,41 +8,41 @@ export interface Channel { ch: string; name: string; tag: string; file: string; 
 
 // The evidence gallery now uses the local Gorb images in /public.
 export const MEMES: Meme[] = [
-  { img: '/1.png', cap: 'gorb_season' },
-  { img: '/2.png', cap: 'purple_lambo_nights' },
-  { img: '/3.png', cap: 'past_the_moon' },
-  { img: '/4.png', cap: 'king_of_value' },
-  { img: '/5.png', cap: '3am_fry_vision' },
-  { img: '/6.png', cap: 'blessed_soft_serve' },
-  { img: '/content.png', cap: 'generational_wealth' },
+  { img: '/1.webp', cap: 'gorb_season' },
+  { img: '/2.webp', cap: 'purple_lambo_nights' },
+  { img: '/3.webp', cap: 'past_the_moon' },
+  { img: '/4.webp', cap: 'king_of_value' },
+  { img: '/5.webp', cap: '3am_fry_vision' },
+  { img: '/6.webp', cap: 'blessed_soft_serve' },
+  { img: '/content.webp', cap: 'generational_wealth' },
 ]
 
 export const CHANNELS = raw.CHANNELS as Channel[]
 
 // Local Gorb images, reused as Canal 88 channel stills (no local video).
-export const GORB_IMAGES = ['/1.png', '/2.png', '/3.png', '/4.png', '/5.png', '/6.png', '/content.png']
+export const GORB_IMAGES = ['/1.webp', '/2.webp', '/3.webp', '/4.webp', '/5.webp', '/6.webp', '/content.webp']
 
 // Gorb Shop catalogue. Product photos live in /public/shop.
 export interface Product { id: string; title: string; price: number; img: string; tag?: string; blurb: string }
 export const PRODUCTS: Product[] = [
-  { id: 'gorb',       title: 'Gorb',           price: 24.99, img: '/shop/1.png',  tag: 'The OG',   blurb: 'The original purple menace. Cap on, no notes.' },
-  { id: 'gorb_dad',   title: 'Gorb Dad',       price: 19.99, img: '/shop/2.png',  tag: 'Family',   blurb: 'Blue, calm, quietly holds the family together.' },
-  { id: 'gorb_mom',   title: 'Gorb Mom',       price: 19.99, img: '/shop/3.png',  tag: 'Family',   blurb: 'Pink, pearls, absolutely runs the household.' },
-  { id: 'gorb_dog',   title: 'Gorb Dog',       price: 19.99, img: '/shop/4.png',  tag: 'Pets',     blurb: 'Floppy ears, one M tag, endless zoomies.' },
-  { id: 'gorb_uncle', title: 'Gorb Uncle',     price: 19.99, img: '/shop/5.png',  tag: 'Family',   blurb: 'Green, floral shirt, one story too many.' },
-  { id: 'gorb_grandpa', title: 'Gorb Grandpa', price: 19.99, img: '/shop/6.png',  tag: 'Family',   blurb: 'Orange, glasses, bow tie, pure wisdom.' },
-  { id: 'gorb_grandma', title: 'Gorb Grandma', price: 19.99, img: '/shop/7.png',  tag: 'Family',   blurb: 'Silver curls and cat-eye glasses. Iconic.' },
-  { id: 'gorb_baby',  title: 'Gorb Baby',      price: 14.99, img: '/shop/8.png',  tag: 'Family',   blurb: 'Tiny, red, chaos in a diaper.' },
-  { id: 'gorb_auntie', title: 'Gorb Auntie',   price: 19.99, img: '/shop/18.png', tag: 'Family',   blurb: 'Pink bow, pearls, knows everyone gossip.' },
-  { id: 'gorb_alien', title: 'Gorb Alien',     price: 19.99, img: '/shop/9.png',  tag: 'Cosmic',   blurb: 'Three eyes, spacesuit, came for the fries.' },
-  { id: 'gorb_slime', title: 'Gorb Slime',     price: 14.99, img: '/shop/10.png', tag: 'Goo',      blurb: 'Drippy green goo with a big tongue.' },
-  { id: 'gorb_shadow', title: 'Gorb Shadow',   price: 19.99, img: '/shop/11.png', tag: 'Spooky',   blurb: 'Glowing eyes, pure static energy.' },
-  { id: 'gorb_banana', title: 'Gorb Banana',   price: 14.99, img: '/shop/12.png', tag: 'Snacks',   blurb: 'Half peeled, fully unhinged.' },
-  { id: 'gorb_popcorn', title: 'Gorb Popcorn', price: 14.99, img: '/shop/13.png', tag: 'Snacks',   blurb: 'A bucket that bites back.' },
-  { id: 'gorb_pizza', title: 'Gorb Pizza',     price: 16.99, img: '/shop/14.png', tag: 'Snacks',   blurb: 'Extra cheese, extra teeth.' },
-  { id: 'gorb_rockstar', title: 'Gorb Rockstar', price: 16.99, img: '/shop/15.png', tag: 'Squad',  blurb: 'Pink mohawk, flying V, lives to rock.' },
-  { id: 'gorb_ninja', title: 'Gorb Ninja',     price: 16.99, img: '/shop/16.png', tag: 'Squad',    blurb: 'Silent, deadly, still adorable.' },
-  { id: 'gorb_superhero', title: 'Gorb Superhero', price: 16.99, img: '/shop/17.png', tag: 'Squad', blurb: 'Not all heroes are normal.' },
+  { id: 'gorb',       title: 'Gorb',           price: 24.99, img: '/shop/1.webp',  tag: 'The OG',   blurb: 'The original purple menace. Cap on, no notes.' },
+  { id: 'gorb_dad',   title: 'Gorb Dad',       price: 19.99, img: '/shop/2.webp',  tag: 'Family',   blurb: 'Blue, calm, quietly holds the family together.' },
+  { id: 'gorb_mom',   title: 'Gorb Mom',       price: 19.99, img: '/shop/3.webp',  tag: 'Family',   blurb: 'Pink, pearls, absolutely runs the household.' },
+  { id: 'gorb_dog',   title: 'Gorb Dog',       price: 19.99, img: '/shop/4.webp',  tag: 'Pets',     blurb: 'Floppy ears, one M tag, endless zoomies.' },
+  { id: 'gorb_uncle', title: 'Gorb Uncle',     price: 19.99, img: '/shop/5.webp',  tag: 'Family',   blurb: 'Green, floral shirt, one story too many.' },
+  { id: 'gorb_grandpa', title: 'Gorb Grandpa', price: 19.99, img: '/shop/6.webp',  tag: 'Family',   blurb: 'Orange, glasses, bow tie, pure wisdom.' },
+  { id: 'gorb_grandma', title: 'Gorb Grandma', price: 19.99, img: '/shop/7.webp',  tag: 'Family',   blurb: 'Silver curls and cat-eye glasses. Iconic.' },
+  { id: 'gorb_baby',  title: 'Gorb Baby',      price: 14.99, img: '/shop/8.webp',  tag: 'Family',   blurb: 'Tiny, red, chaos in a diaper.' },
+  { id: 'gorb_auntie', title: 'Gorb Auntie',   price: 19.99, img: '/shop/18.webp', tag: 'Family',   blurb: 'Pink bow, pearls, knows everyone gossip.' },
+  { id: 'gorb_alien', title: 'Gorb Alien',     price: 19.99, img: '/shop/9.webp',  tag: 'Cosmic',   blurb: 'Three eyes, spacesuit, came for the fries.' },
+  { id: 'gorb_slime', title: 'Gorb Slime',     price: 14.99, img: '/shop/10.webp', tag: 'Goo',      blurb: 'Drippy green goo with a big tongue.' },
+  { id: 'gorb_shadow', title: 'Gorb Shadow',   price: 19.99, img: '/shop/11.webp', tag: 'Spooky',   blurb: 'Glowing eyes, pure static energy.' },
+  { id: 'gorb_banana', title: 'Gorb Banana',   price: 14.99, img: '/shop/12.webp', tag: 'Snacks',   blurb: 'Half peeled, fully unhinged.' },
+  { id: 'gorb_popcorn', title: 'Gorb Popcorn', price: 14.99, img: '/shop/13.webp', tag: 'Snacks',   blurb: 'A bucket that bites back.' },
+  { id: 'gorb_pizza', title: 'Gorb Pizza',     price: 16.99, img: '/shop/14.webp', tag: 'Snacks',   blurb: 'Extra cheese, extra teeth.' },
+  { id: 'gorb_rockstar', title: 'Gorb Rockstar', price: 16.99, img: '/shop/15.webp', tag: 'Squad',  blurb: 'Pink mohawk, flying V, lives to rock.' },
+  { id: 'gorb_ninja', title: 'Gorb Ninja',     price: 16.99, img: '/shop/16.webp', tag: 'Squad',    blurb: 'Silent, deadly, still adorable.' },
+  { id: 'gorb_superhero', title: 'Gorb Superhero', price: 16.99, img: '/shop/17.webp', tag: 'Squad', blurb: 'Not all heroes are normal.' },
 ]
 
 export const CONFIG = {

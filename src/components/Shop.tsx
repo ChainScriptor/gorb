@@ -124,7 +124,7 @@ export default function Shop() {
             <div style={{ background: '#f2f5fb', borderRadius: 8, aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', cursor: 'zoom-in', position: 'relative' }}
                  title="Click to enlarge"
                  onClick={() => setZoom(p)}>
-              <img src={p.img} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              <img src={p.img} alt={p.title} loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/4444.png' }} />
               <span style={{ position: 'absolute', bottom: 6, right: 6, background: 'rgba(0,0,0,.55)', color: '#fff', fontSize: 12, lineHeight: 1, padding: '4px 6px', borderRadius: 6 }}>⤢</span>
             </div>
