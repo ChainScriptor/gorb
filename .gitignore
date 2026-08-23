@@ -11,3 +11,6 @@ scripts/nft/.keys
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts
+
+# original gallery artwork, kept locally only
+gallery-src

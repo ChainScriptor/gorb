@@ -46,6 +46,19 @@ export const GORB_IMAGES = ['/1.webp', '/2.webp', '/3.webp', '/4.webp', '/5.webp
 // longer than this, so Canal 88 cycles these across it.
 export const TAPES = ['/1.mp4', '/2.mp4']
 
+// Poster wall shown in Gorb Gallery. Files live in /public/gallery, which Vite
+// serves verbatim and therefore cannot be globbed at build time, so new artwork
+// has to be listed here by hand.
+export const GALLERY = [
+  '/gallery/01.webp',
+  '/gallery/02.webp',
+  '/gallery/03.webp',
+  '/gallery/04.webp',
+  '/gallery/05.webp',
+  '/gallery/06.webp',
+  '/gallery/07.webp',
+]
+
 // Gorb Shop catalogue. Product photos live in /public/shop.
 export interface Product { id: string; title: string; price: number; img: string; tag?: string; blurb: string }
 export const PRODUCTS: Product[] = [
