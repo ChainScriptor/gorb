@@ -108,6 +108,14 @@ export default function NftMint() {
         <em>Pick a design, mint it to your wallet ▸</em>
       </div>
 
+      <div style={gameNote}>
+        <span style={gameNoteIcon} aria-hidden="true">🎮</span>
+        <span>
+          <b>Keep these.</b> The ones you mint are the family you will be able to play as in
+          <b> Gorb Rescue</b>. Every design you are missing is one you cannot bring out of the building.
+        </span>
+      </div>
+
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px', borderBottom: '1px solid #b6c4dd', background: '#ece9d8' }}>
         <WalletMultiButton style={{ height: 32, fontSize: 13 }} />
         <span style={{ fontSize: 12, color: '#54607a' }}>
@@ -226,4 +234,24 @@ export default function NftMint() {
       )}
     </div>
   )
+}
+
+/* The mint is the only place that explains why a design is worth having, so
+   the Gorb Rescue tie-in lives here rather than in a blurb nobody reads. */
+const gameNote: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'flex-start',
+  gap: 10,
+  padding: '10px 16px',
+  borderBottom: '1px solid #cbb3f0',
+  background: 'linear-gradient(180deg, #f3e9ff, #e9dbfb)',
+  color: '#4b2170',
+  fontSize: 12.5,
+  lineHeight: 1.55,
+}
+
+const gameNoteIcon: React.CSSProperties = {
+  fontSize: 16,
+  lineHeight: 1.2,
+  flex: 'none',
 }

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { APPS, DESKTOP_ICONS, CONFIG } from '../data/apps'
 import type { AppId } from '../data/apps'
 import { useWM } from '../wm'
+import GorbHelper from './GorbHelper'
 import Icon from './Icon'
 import Window from './Window'
 import Taskbar from './Taskbar'
@@ -153,6 +154,8 @@ export default function Desktop({ scanlines, onToggleScan }: Props) {
         onClose={() => setStartOpen(false)}
         onToggleScan={onToggleScan}
       />
+
+      <GorbHelper />
 
       <div className={'scanlines' + (scanlines ? ' is-on' : '')} id="scanlines" aria-hidden="true" />
     </main>
