@@ -2,7 +2,7 @@
   "name": "gorb",
   "private": true,
   "version": "1.0.0",
-  "description": "ToadOS desktop, rebuilt in React (clone of thetoadmeme.com)",
+  "description": "GorbOS, the $GORB desktop, built with React, TypeScript and Vite",
   "type": "module",
   "scripts": {
     "dev": "vite",

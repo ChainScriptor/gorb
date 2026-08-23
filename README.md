@@ -1,9 +1,8 @@
-# gorb — ToadOS, rebuilt in React
+# gorb — GorbOS
 
-A React + TypeScript + Vite rebuild of the ToadOS desktop at
-[thetoadmeme.com](https://thetoadmeme.com/). It recreates the Windows-XP-style
-desktop shell (login, wallpaper, icons, taskbar, tray clock, start menu,
-draggable windows) and all 16 app windows.
+A React + TypeScript + Vite desktop for $GORB. It is a Windows-XP-style shell
+(login, wallpaper, icons, taskbar, tray clock, start menu, draggable windows)
+with every app window rendered inside it.
 
 ## Run
 
@@ -19,32 +18,31 @@ npm run preview  # serve the production build
 
 ## How it was built
 
-The content and styling come straight from the original site so the look
-matches:
+The shell keeps a period-accurate look, so a few assets are used as-is:
 
-- `public/xp.css` — the original stylesheet, served verbatim (the browser
-  parses it leniently, exactly as the source site does).
-- `src/data/templates.ts` — the original `<template id="app-*">` blocks, used
-  as-is for the static windows.
-- `src/data/sprite.ts` — the original SVG icon sprite.
-- `src/data/toados.json` — extracted config: links, contract address, the
-  Canal 88 tape list, and the 51-item meme list.
+- `public/xp.css` — the stylesheet, served verbatim rather than through Vite
+  (it contains a malformed rule that PostCSS rejects but browsers parse
+  leniently).
+- `src/data/templates.ts` — the `<template id="app-*">` markup blocks used for
+  the static windows.
+- `src/data/sprite.ts` — the SVG icon sprite.
+- `src/data/gorbos.json` — config: links, contract address, the Canal 88
+  channel list and the meme list.
 
-Images, posters, and tape videos are loaded from `https://thetoadmeme.com`
-rather than bundled, so nothing large is copied into the repo.
+All images, posters and tape videos live in `public/` and ship with the site.
 
 ## App windows
 
 | App | Behaviour |
 |---|---|
-| Toad Archivo (explorer) | Original markup, sidebar links wired via `data-open` / `data-cfg` |
+| Gorb Archivo (explorer) | Sidebar links wired via `data-open` / `data-cfg` |
 | Canal 88 Player | Video player cycling the real tape list (picks the "on air" tape by clock) |
-| Evidence + Toad Viewer | 51-item meme grid, opens a prev/next viewer |
+| Evidence + Gorb Viewer | Meme grid, opens a prev/next viewer |
 | Live chart | Embeds the live Dexscreener chart |
 | Terminal | Best-effort live price/mcap/liquidity from the Dexscreener API |
-| Toad Gallery / Messenger | Read-only views of the public Supabase gallery / chat |
-| Toad Paint | Working canvas (colors, brush size, clear) |
-| Tokenomics, HowToBuy, Lore, ReadMe, Contract, Leaderboard, Recycle Bin | Original static content |
+| Gorb Gallery / Messenger | Poster wall plus the public Supabase gallery / chat |
+| Gorb Paint | Working canvas (colors, brush size, clear) |
+| Tokenomics, HowToBuy, Lore, ReadMe, Contract, Leaderboard, Recycle Bin | Static content |
 
 ## Backend (Supabase)
 

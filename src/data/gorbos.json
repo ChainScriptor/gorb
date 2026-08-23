@@ -1,7 +1,7 @@
 {
- "REMOTE": "https://thetoadmeme.com",
+ "REMOTE": "https://gorb.cryptictiger39.workers.dev",
  "CONFIG": {
-  "ca": "A13oRB9FFaiUjfi6LdCg6p9ka1u8SfGkUFs4SKvPpump",
+  "ca": "8J9uSe5ngXYHv3nu8UHSLFChfnDSFUh7nKs2i9sFaWU4",
   "x": "https://x.com/gorbfamily",
   "community": "https://x.com/i/communities/1991148242780967304",
   "tiktok": "https://www.tiktok.com/@gorbthememe",
@@ -21,8 +21,8 @@
    "cap": "street_legend"
   },
   {
-   "f": "toadmart",
-   "cap": "toad_mart"
+   "f": "gorbmart",
+   "cap": "gorb_mart"
   },
   {
    "f": "blade",
@@ -70,7 +70,7 @@
   },
   {
    "f": "oldmoney",
-   "cap": "old_money_toad"
+   "cap": "old_money_gorb"
   },
   {
    "f": "timekeeper",
@@ -201,8 +201,8 @@
    "cap": "kaiju_playplace"
   },
   {
-   "f": "happy_meal_toad",
-   "cap": "godzilla_x_toad"
+   "f": "happy_meal_gorb",
+   "cap": "godzilla_x_gorb"
   },
   {
    "f": "handshake",
@@ -250,7 +250,7 @@
    "ch": "92",
    "name": "THE SOURCE",
    "tag": "Green code",
-   "file": "TOAD_matrix_4_web",
+   "file": "GORB_matrix_4_web",
    "poster": "poster-source.jpg",
    "sec": 15.09
   },
@@ -330,8 +330,8 @@
    "ch": "102",
    "name": "THE MONTAGE",
    "tag": "Steps at dawn",
-   "file": "rocky_toad",
-   "poster": "poster-rocky_toad.jpg",
+   "file": "rocky_gorb",
+   "poster": "poster-rocky_gorb.jpg",
    "sec": 27.05
   },
   {

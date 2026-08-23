@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CONFIG } from '../data/apps'
+import { CONFIG, HAS_TOKEN } from '../data/apps'
 
 interface Stats {
   price?: string
@@ -19,6 +19,9 @@ export default function Terminal() {
   const [s, setS] = useState<Stats>({})
 
   const load = () => {
+    // No contract, nothing to look up. Querying with an empty id would either
+    // error or, worse, resolve to some unrelated token.
+    if (!HAS_TOKEN) { setLive('no token yet'); setS({}); return }
     setLive('connecting…')
     fetch('https://api.dexscreener.com/latest/dex/tokens/' + CONFIG.ca)
       .then((r) => r.json())
@@ -64,7 +67,13 @@ export default function Terminal() {
       </section>
       <section className="term__hold">
         <h3>Contract</h3>
-        <p className="term__pair" style={{ wordBreak: 'break-all' }}>{CONFIG.ca}</p>
+        {HAS_TOKEN ? (
+          <p className="term__pair" style={{ wordBreak: 'break-all' }}>{CONFIG.ca}</p>
+        ) : (
+          <p className="term__pair" style={{ lineHeight: 1.6 }}>
+            Not launched yet. There is no $GORB contract, and anything claiming to be one is not ours.
+          </p>
+        )}
       </section>
     </div>
   )

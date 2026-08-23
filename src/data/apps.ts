@@ -82,11 +82,18 @@ export const PRODUCTS: Product[] = [
   { id: 'gorb_superhero', title: 'Gorb Superhero', price: 16.99, img: '/shop/17.webp', tag: 'Squad', blurb: 'Not all heroes are normal.' },
 ]
 
+// No contract exists yet. Everything token-facing reads this flag rather than
+// guessing from an address, so the site never shows a CA it cannot stand behind.
+// When the token launches, put the address in gorbos.json and this flips itself.
+export const HAS_TOKEN = Boolean(raw.CONFIG.ca)
+
 export const CONFIG = {
   ...raw.CONFIG,
-  buy: raw.CONFIG.ca ? `https://pump.fun/coin/${raw.CONFIG.ca}` : 'https://pump.fun',
-  chart: raw.CONFIG.ca ? `https://dexscreener.com/solana/${raw.CONFIG.ca}` : 'https://dexscreener.com/solana',
-  scan: raw.CONFIG.ca ? `https://solscan.io/token/${raw.CONFIG.ca}` : 'https://solscan.io',
+  // Not a pump.fun launch: this mint was created directly and its liquidity
+  // lives in a Meteora pool, so buying goes through an aggregator.
+  buy: raw.CONFIG.ca ? `https://jup.ag/swap/SOL-${raw.CONFIG.ca}` : '',
+  chart: raw.CONFIG.ca ? `https://dexscreener.com/solana/${raw.CONFIG.ca}` : '',
+  scan: raw.CONFIG.ca ? `https://solscan.io/token/${raw.CONFIG.ca}` : '',
 }
 
 export type AppId =
@@ -171,7 +178,8 @@ export const START_LEFT: MenuItem[] = [
 
 export const START_RIGHT: MenuItem[] = [
   { icon: 'ic-contract', label: 'Contract address', app: 'contract' },
-  { icon: LOGO,          label: 'Buy on pump.fun', link: CONFIG.buy },
+  // Hidden until there is something to buy; a bare pump.fun link would imply a listing.
+  ...(HAS_TOKEN ? [{ icon: LOGO, label: 'Buy on Jupiter', link: CONFIG.buy }] : []),
   { icon: 'ic-chart',    label: 'Live chart', sub: 'Opens here', app: 'chart' },
   { icon: 'sep', label: '' },
   { icon: LOGO,          label: 'X / Twitter', link: CONFIG.x },

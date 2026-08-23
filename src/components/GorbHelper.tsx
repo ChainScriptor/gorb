@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { CONFIG, PRODUCTS, type AppId } from '../data/apps'
+import { CONFIG, HAS_TOKEN, PRODUCTS, type AppId } from '../data/apps'
 import { useWM } from '../wm'
 
 /* Desk assistant that lives in the bottom-right corner. Canned answers only,
@@ -27,18 +27,20 @@ const TOPICS: Topic[] = [
     id: 'contract',
     chip: 'contract',
     match: ['contract', 'ca', 'address', 'token', 'συμβολαιο'],
-    answer:
-      'The contract address is below. Copy it from here, not from a reply under someone else\'s post. That is how people get robbed.',
-    copy: CONFIG.ca,
-    link: { label: 'Solscan ↗', href: CONFIG.scan },
+    answer: HAS_TOKEN
+      ? 'The contract address is below. Copy it from here, not from a reply under someone else\'s post. That is how people get robbed.'
+      : 'There is no contract. $GORB has not launched, so there is nothing to buy and nothing to copy. If somebody shows you an address today it is not ours, and you should assume they are trying to take your money.',
+    copy: HAS_TOKEN ? CONFIG.ca : undefined,
+    link: HAS_TOKEN ? { label: 'Solscan ↗', href: CONFIG.scan } : undefined,
   },
   {
     id: 'buy',
     chip: 'how do i buy',
-    match: ['buy', 'buying', 'purchase', 'pump', 'how do i get', 'αγορα'],
-    answer:
-      'On pump.fun, with the contract address above. Check the address character by character before you sign anything.',
-    link: { label: 'Open pump.fun ↗', href: CONFIG.buy },
+    match: ['buy', 'buying', 'purchase', 'pump', 'jupiter', 'jup', 'swap', 'how do i get', 'αγορα'],
+    answer: HAS_TOKEN
+      ? 'Through Jupiter, using the contract address above. The liquidity sits in a Meteora pool, so a swap aggregator is the way in. Check the address character by character before you sign anything.'
+      : 'You cannot yet. It has not launched. When it does, the address will show up here and on the official X account first, and anywhere else is somebody guessing or lying.',
+    link: HAS_TOKEN ? { label: 'Swap on Jupiter ↗', href: CONFIG.buy } : undefined,
   },
   {
     id: 'nft',
@@ -82,8 +84,9 @@ const TOPICS: Topic[] = [
     id: 'chart',
     chip: 'the chart',
     match: ['chart', 'price', 'dexscreener', 'dex', 'τιμη'],
-    answer:
-      'The chart opens on the desktop. I am not going to tell you what it is going to do, because I do not know and neither does anyone else.',
+    answer: HAS_TOKEN
+      ? 'The chart opens on the desktop. I am not going to tell you what it is going to do, because I do not know and neither does anyone else.'
+      : 'There is no chart, because there is no token yet.',
     opens: 'chart',
   },
   {
@@ -97,8 +100,9 @@ const TOPICS: Topic[] = [
     id: 'safe',
     chip: 'is it safe',
     match: ['safe', 'safety', 'scam', 'rug', 'risk', 'legit'],
-    answer:
-      'The NFT mint is on devnet, so it spends test money and cannot cost you anything. The token is a memecoin and can go to zero like any other. Never send anyone your seed phrase, and only use the contract address from this window.',
+    answer: HAS_TOKEN
+      ? 'The NFT mint is on devnet, so it spends test money and cannot cost you anything. The token is a memecoin and can go to zero like any other. Never send anyone your seed phrase, and only use the contract address from this window.'
+      : 'The NFT mint is on devnet, so it spends test money and cannot cost you anything. There is no token yet, so nobody can sell you one. Never send anyone your seed phrase, and treat any $GORB address circulating right now as a scam.',
     opens: 'safety',
   },
 ]

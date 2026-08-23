@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { TEMPLATES } from '../data/templates'
-import { CONFIG } from '../data/apps'
+import { CONFIG, HAS_TOKEN } from '../data/apps'
 import type { AppId } from '../data/apps'
 import { useWM } from '../wm'
 
@@ -15,14 +15,34 @@ export default function StaticApp({ app }: { app: AppId }) {
     const root = ref.current
     if (!root) return
 
-    // fill the contract address placeholders
-    root.querySelectorAll('#padCA, #dlgCA').forEach((el) => { el.textContent = CONFIG.ca })
+    /* There is no token yet. Rather than print an address the project cannot
+       stand behind, every contract surface says so plainly and the buy/scan
+       buttons are disabled until gorbos.json carries a real one. */
+    root.querySelectorAll('#padCA, #dlgCA').forEach((el) => {
+      el.textContent = HAS_TOKEN ? CONFIG.ca : 'Not launched yet — there is no $GORB contract.'
+    })
 
-    // external link targets the original set from CONFIG
-    const scan = root.querySelector<HTMLAnchorElement>('#dlgScan')
-    if (scan) scan.href = CONFIG.scan
-    const padBuy = root.querySelector<HTMLAnchorElement>('#padBuy')
-    if (padBuy) padBuy.href = CONFIG.buy
+    const disable = (el: HTMLAnchorElement | null, href: string) => {
+      if (!el) return
+      if (HAS_TOKEN) { el.href = href; return }
+      el.removeAttribute('href')
+      el.setAttribute('aria-disabled', 'true')
+      el.style.pointerEvents = 'none'
+      el.style.opacity = '0.45'
+    }
+    disable(root.querySelector<HTMLAnchorElement>('#dlgScan'), CONFIG.scan)
+    disable(root.querySelector<HTMLAnchorElement>('#padBuy'), CONFIG.buy)
+
+    if (!HAS_TOKEN) {
+      root.querySelectorAll<HTMLButtonElement>('#padCopy, #dlgCopy').forEach((b) => {
+        b.disabled = true
+        b.style.opacity = '0.45'
+      })
+      root.querySelectorAll('.dlg__warn').forEach((el) => {
+        el.textContent =
+          'No contract exists yet. If anyone shows you a $GORB address right now, it is not ours.'
+      })
+    }
 
     // leaderboard has no live backend here
     const lb = root.querySelector('#lbList')
@@ -45,6 +65,7 @@ export default function StaticApp({ app }: { app: AppId }) {
       }
       if (t.closest('#padCopy, #dlgCopy')) {
         e.preventDefault()
+        if (!HAS_TOKEN) return
         navigator.clipboard?.writeText(CONFIG.ca).catch(() => {})
         const btn = t.closest('button')!
         const old = btn.textContent
