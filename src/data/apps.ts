@@ -89,9 +89,7 @@ export const HAS_TOKEN = Boolean(raw.CONFIG.ca)
 
 export const CONFIG = {
   ...raw.CONFIG,
-  // Not a pump.fun launch: this mint was created directly and its liquidity
-  // lives in a Meteora pool, so buying goes through an aggregator.
-  buy: raw.CONFIG.ca ? `https://jup.ag/swap/SOL-${raw.CONFIG.ca}` : '',
+  buy: raw.CONFIG.ca ? `https://pump.fun/coin/${raw.CONFIG.ca}` : '',
   chart: raw.CONFIG.ca ? `https://dexscreener.com/solana/${raw.CONFIG.ca}` : '',
   scan: raw.CONFIG.ca ? `https://solscan.io/token/${raw.CONFIG.ca}` : '',
 }

@@ -38,7 +38,7 @@ const TOPICS: Topic[] = [
     chip: 'how do i buy',
     match: ['buy', 'buying', 'purchase', 'pump', 'jupiter', 'jup', 'swap', 'how do i get', 'αγορα'],
     answer: HAS_TOKEN
-      ? 'Take the contract address above into any Solana swap app you already trust. The liquidity sits in a Meteora pool. Check the address character by character before you sign anything.'
+      ? 'Take the contract address above into pump.fun or any Solana swap app you already trust. Check the address character by character before you sign anything.'
       : 'You cannot yet. It has not launched. When it does, the address will show up here and on the official X account first, and anywhere else is somebody guessing or lying.',
   },
   {
