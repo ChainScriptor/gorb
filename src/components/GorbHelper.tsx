@@ -38,9 +38,8 @@ const TOPICS: Topic[] = [
     chip: 'how do i buy',
     match: ['buy', 'buying', 'purchase', 'pump', 'jupiter', 'jup', 'swap', 'how do i get', 'αγορα'],
     answer: HAS_TOKEN
-      ? 'Through Jupiter, using the contract address above. The liquidity sits in a Meteora pool, so a swap aggregator is the way in. Check the address character by character before you sign anything.'
+      ? 'Take the contract address above into any Solana swap app you already trust. The liquidity sits in a Meteora pool. Check the address character by character before you sign anything.'
       : 'You cannot yet. It has not launched. When it does, the address will show up here and on the official X account first, and anywhere else is somebody guessing or lying.',
-    link: HAS_TOKEN ? { label: 'Swap on Jupiter ↗', href: CONFIG.buy } : undefined,
   },
   {
     id: 'nft',
@@ -92,8 +91,8 @@ const TOPICS: Topic[] = [
   {
     id: 'socials',
     chip: 'socials',
-    match: ['twitter', 'x', 'social', 'socials', 'tiktok', 'community', 'follow'],
-    answer: 'We are on X and TikTok, and there is a community tab for the people who are already looking.',
+    match: ['twitter', 'x', 'social', 'socials', 'tiktok', 'follow'],
+    answer: 'X and TikTok. That is where the family turns up first.',
     link: { label: 'X / Twitter ↗', href: CONFIG.x },
   },
   {

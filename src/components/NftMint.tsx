@@ -117,7 +117,8 @@ export default function NftMint() {
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px', borderBottom: '1px solid #b6c4dd', background: '#ece9d8' }}>
-        <WalletMultiButton style={{ height: 32, fontSize: 13 }} />
+        {/* sizing lives in gorb.css so it can beat the adapter's own line-height */}
+        <WalletMultiButton />
         <span style={{ fontSize: 12, color: '#54607a' }}>
           Set Phantom to <b>Devnet</b> in its network settings. This mints test NFTs only — no real money.
           {' '}Not enough SOL? You still get one <b>free</b> mint per design.

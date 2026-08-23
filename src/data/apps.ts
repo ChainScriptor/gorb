@@ -128,7 +128,7 @@ export const APPS: Record<AppId, AppDef> = {
   chart:      { title: 'Live chart — Dexscreener', icon: 'ic-chart',      w: 1000, h: 690, status: 'Streaming from Dexscreener' },
   contract:   { title: 'Contract address',         icon: 'ic-contract',   w: 460, h: 300, status: '', dialog: true },
   safety:     { title: 'ReadMe.txt — Notepad',     icon: 'ic-safety',     w: 540, h: 480, status: '' },
-  bin:        { title: 'Recycle Bin',              icon: 'ic-bin',        w: 480, h: 320, status: '3 objects' },
+  bin:        { title: 'Recycle Bin',              icon: 'ic-bin',        w: 480, h: 320, status: '2 objects' },
   nftmint:    { title: 'Gorb NFT Mint',             icon: '/4444.webp',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
   game:       { title: 'Gorb Rescue',               icon: '/game.png',       w: 720, h: 520, status: 'In development', fullscreen: true },
 }
@@ -178,12 +178,9 @@ export const START_LEFT: MenuItem[] = [
 
 export const START_RIGHT: MenuItem[] = [
   { icon: 'ic-contract', label: 'Contract address', app: 'contract' },
-  // Hidden until there is something to buy; a bare pump.fun link would imply a listing.
-  ...(HAS_TOKEN ? [{ icon: LOGO, label: 'Buy on Jupiter', link: CONFIG.buy }] : []),
   { icon: 'ic-chart',    label: 'Live chart', sub: 'Opens here', app: 'chart' },
   { icon: 'sep', label: '' },
   { icon: LOGO,          label: 'X / Twitter', link: CONFIG.x },
-  { icon: LOGO,          label: 'X Community', link: CONFIG.community },
   { icon: LOGO,          label: 'TikTok', link: CONFIG.tiktok },
   { icon: 'sep', label: '' },
   { icon: 'ic-canal88',  label: 'Toggle scanlines', action: 'scanlines' },

@@ -204,3 +204,28 @@ html, body, #root {
   cursor: pointer;
 }
 .mob__nav button:active { background: rgba(255, 255, 255, .12); }
+
+/* ── Solana wallet button ──────────────────────────────────────
+   The adapter ships height:48px with a matching line-height:48px. Shrinking
+   only the height leaves the line box at 48px, so the label spills out above
+   and below the button. Height has to go auto and the line-height with it. */
+.wallet-adapter-button,
+.wallet-adapter-button-trigger {
+  height: auto;
+  min-height: 32px;
+  line-height: 1.2;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  white-space: nowrap;
+  border-radius: 6px;
+}
+
+.wallet-adapter-button .wallet-adapter-button-start-icon,
+.wallet-adapter-button .wallet-adapter-button-end-icon,
+.wallet-adapter-button .wallet-adapter-button-start-icon img,
+.wallet-adapter-button .wallet-adapter-button-end-icon img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
