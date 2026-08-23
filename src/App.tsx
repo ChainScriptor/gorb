@@ -6,6 +6,7 @@ import Login from './components/Login'
 import Desktop from './components/Desktop'
 import MobileShell from './components/MobileShell'
 import WalletContextProvider from './wallet/WalletContextProvider'
+import { playClip } from './sfx'
 
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -27,7 +28,12 @@ export default function App() {
         <Login
           scanlines={scanlines}
           onToggleScan={() => setScanlines((s) => !s)}
-          onEnter={() => setLoggedIn(true)}
+          /* Fired from the login click itself, so the browser counts it
+             as user activation and never blocks the playback. */
+          onEnter={() => {
+            playClip('/open.mp3')
+            setLoggedIn(true)
+          }}
         />
       ) : (
         <WalletContextProvider>

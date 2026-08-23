@@ -10,9 +10,10 @@ import Terminal from './Terminal'
 import Paint from './Paint'
 import NftMint from './NftMint'
 import GameComingSoon from './GameComingSoon'
+import Lore from './Lore'
 
 // Apps whose content is fully contained in the original <template> markup.
-const STATIC: AppId[] = ['explorer', 'tokenomics', 'buy', 'lore', 'safety', 'bin', 'board', 'contract']
+const STATIC: AppId[] = ['explorer', 'tokenomics', 'buy', 'safety', 'bin', 'board', 'contract']
 
 export default function AppContent({ app, payload, winKey }: { app: AppId; payload?: unknown; winKey?: number }) {
   switch (app) {
@@ -26,6 +27,7 @@ export default function AppContent({ app, payload, winKey }: { app: AppId; paylo
     case 'paint': return <Paint />
     case 'nftmint': return <NftMint />
     case 'game': return <GameComingSoon winKey={winKey} />
+    case 'lore': return <Lore />
     default:
       if (STATIC.includes(app)) return <StaticApp app={app} />
       return <StaticApp app={app} />

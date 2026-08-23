@@ -39,8 +39,12 @@ export const MEME_FOLDERS: MemeFolder[] = [
 
 export const CHANNELS = raw.CHANNELS as Channel[]
 
-// Local Gorb images, reused as Canal 88 channel stills (no local video).
+// Local Gorb images, reused as Canal 88 channel stills.
 export const GORB_IMAGES = ['/1.webp', '/2.webp', '/3.webp', '/4.webp', '/5.webp', '/6.webp', '/content.webp']
+
+// The tapes that actually exist in /public. The channel list above is much
+// longer than this, so Canal 88 cycles these across it.
+export const TAPES = ['/1.mp4', '/2.mp4']
 
 // Gorb Shop catalogue. Product photos live in /public/shop.
 export interface Product { id: string; title: string; price: number; img: string; tag?: string; blurb: string }
@@ -99,13 +103,13 @@ export const APPS: Record<AppId, AppDef> = {
   viewer:     { title: 'Gorb Viewer',              icon: 'ic-viewer',     w: 720, h: 600, status: '' },
   tokenomics: { title: 'Tokenomics.xls',           icon: 'ic-tokenomics', w: 520, h: 470, status: 'Read only' },
   buy:        { title: 'HowToBuy.txt — Notepad',   icon: 'ic-buy',        w: 560, h: 520, status: '' },
-  lore:       { title: 'Lore.hlp — Help',          icon: 'ic-lore',       w: 600, h: 560, status: 'The Record' },
+  lore:       { title: 'Lore.hlp — Help',          icon: 'ic-lore',       w: 1040, h: 720, status: 'The origin file · 24 pages' },
   board:      { title: 'Leaderboard',              icon: 'ic-board',      w: 440, h: 560, status: 'This week' },
   chart:      { title: 'Live chart — Dexscreener', icon: 'ic-chart',      w: 1000, h: 690, status: 'Streaming from Dexscreener' },
   contract:   { title: 'Contract address',         icon: 'ic-contract',   w: 460, h: 300, status: '', dialog: true },
   safety:     { title: 'ReadMe.txt — Notepad',     icon: 'ic-safety',     w: 540, h: 480, status: '' },
   bin:        { title: 'Recycle Bin',              icon: 'ic-bin',        w: 480, h: 320, status: '3 objects' },
-  nftmint:    { title: 'Gorb NFT Mint',             icon: '/nft.svg',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
+  nftmint:    { title: 'Gorb NFT Mint',             icon: '/4444.webp',    w: 860, h: 620, status: `${PRODUCTS.length} designs · devnet` },
   game:       { title: 'Gorb Rescue',               icon: '/game.png',       w: 720, h: 520, status: 'In development', fullscreen: true },
 }
 
@@ -137,7 +141,7 @@ export interface MenuItem { icon: string; label: string; sub?: string; app?: App
 export const LOGO = '/4444.png'
 
 export const START_LEFT: MenuItem[] = [
-  { icon: '/nft.svg',    label: 'Gorb NFT Mint', sub: 'Mint on Solana devnet', app: 'nftmint' },
+  { icon: '/4444.webp',    label: 'Gorb NFT Mint', sub: 'Mint on Solana devnet', app: 'nftmint' },
   { icon: '/game.png',       label: 'Gorb Rescue', sub: 'The game — in development', app: 'game' },
   { icon: 'ic-explorer',   label: 'Gorb Archivo', sub: 'The whole story', app: 'explorer' },
   { icon: 'ic-canal88',    label: 'Canal 88 Player', sub: `${CHANNELS.length} tapes`, app: 'canal88' },

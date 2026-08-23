@@ -11,7 +11,8 @@
     "nft:keypair": "tsx scripts/nft/generate-keypair.ts",
     "nft:upload": "tsx scripts/nft/upload-assets.ts",
     "nft:deploy": "tsx scripts/nft/deploy-candy-machines.ts",
-    "nft:set-payout": "tsx scripts/nft/update-payment-destination.ts"
+    "nft:set-payout": "tsx scripts/nft/update-payment-destination.ts",
+    "nft:enable-free-fallback": "tsx scripts/nft/enable-free-fallback.ts"
   },
   "dependencies": {
     "@metaplex-foundation/mpl-core": "^1.10.0",

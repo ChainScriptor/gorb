@@ -59,12 +59,26 @@ async function main() {
 
     console.log(`Updating guard destination for "${p.title}"...`)
     await withRetry(`guard update for "${p.title}"`, () =>
+      // Keep the guard layout in sync with enable-free-fallback.ts: the default
+      // set must stay empty, because candy guard merges it into every group and
+      // a stray solPayment there would make the "free" group cost money.
       updateCandyGuard(umi, {
         candyGuard,
-        guards: {
-          solPayment: some({ lamports: sol(entry.priceSol), destination }),
-        },
-        groups: [],
+        guards: {},
+        groups: [
+          {
+            label: 'paid',
+            guards: {
+              solPayment: some({ lamports: sol(entry.priceSol), destination }),
+            },
+          },
+          {
+            label: 'free',
+            guards: {
+              mintLimit: some({ id: 1, limit: 1 }),
+            },
+          },
+        ],
       }).sendAndConfirm(umi),
     )
     await new Promise((r) => setTimeout(r, 500))

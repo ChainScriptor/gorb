@@ -122,9 +122,23 @@ async function main() {
       itemsAvailable: EDITIONS_PER_DESIGN,
       isMutable: true,
       hiddenSettings: some({ name: p.title, uri: asset.metadataUri, hash }),
-      guards: {
-        solPayment: some({ lamports: sol(PRICE_SOL), destination: authority.publicKey }),
-      },
+      // Default set stays empty on purpose: candy guard merges it into every
+      // group, so a solPayment here would also charge the "free" group.
+      guards: {},
+      groups: [
+        {
+          label: 'paid',
+          guards: {
+            solPayment: some({ lamports: sol(PRICE_SOL), destination: authority.publicKey }),
+          },
+        },
+        {
+          label: 'free',
+          guards: {
+            mintLimit: some({ id: 1, limit: 1 }),
+          },
+        },
+      ],
     })
     await withRetry(`candy machine creation for "${p.title}"`, () => createBuilder.sendAndConfirm(umi))
     await new Promise((r) => setTimeout(r, 600))
